@@ -41,6 +41,7 @@
                         final_transcript += e.results[i][0].transcript;
                     }
                 }
+                final_transcript = final_transcript.replace(/\s/g, '');
                 $placeholder.find('.speech-input-title').text(final_transcript);
                 if(opts.callback(final_transcript)){
                     that.close(true);
