@@ -5,7 +5,7 @@ a wrapped webkitSpeechRecognition object
 
 see the demo page: http://grassboy.github.io/SpeechInput/
 
-The .css file was auto created through compass.app: https://github.com/KKBOX/compassapp/releases
+The .css file was auto created through compass.app: https://github.com/KKBOX/compassapp/releases   
 You can maintain .scss files directly
 
 ### Dependency:
