@@ -1,0 +1,95 @@
+//@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+@import "compass/typography/links/link-colors";
+@import "compass/utilities/sprites/base";
+@import "compass/typography/text/replacement";
+@import "compass/css3/user-interface";
+@import "compass/typography/text/ellipsis";
+
+// {{speech-input
+.speech-input-placeholder {
+    transition: background-color 0.2s ease-out, visibility 0.2s ease-out;
+    background-color: transparent;
+    visibility: hidden;
+    position: fixed;
+    left: 0; top: 0; right: 0; bottom: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.speech-input-active {
+        background-color: rgba(black, 0.3);
+        visibility: visible;
+    }
+}
+.speech-input-inner-box {
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    opacity: 0;
+    transform: translateY(60px);
+    background: white;
+    color: #666;
+    padding: 1.5em;
+    width: 80%;
+    max-width: 450px;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(black, 0.4);
+    .speech-input-active & {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+.speech-input-example-list {
+    &:before {
+        color: #BBB;
+        content: attr(data-alt);
+    }
+}
+.speech-input-example-item {
+    line-height: 1.2em;
+    margin: 0.45em;
+    em {
+        font-weight: bold;
+        margin: 0.3em;
+    }
+}
+.speech-input-title {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+.speech-input-example-list {
+    list-style: none;
+    padding: 0;
+}
+.speech-input-example-item em {
+    font-style: normal;
+}
+.speech-input-icon {
+    transition: background-color 0.2s ease-out, box-shadow 0.3s cubic-bezier(0 , 3, 0 , 0);
+    $size: 80px;
+    display: block;
+    margin: 15px auto;
+    padding: 0;
+    line-height: $size;
+    width: $size; height: $size;
+    font-size: $size*0.6;
+    text-align: center;
+    border-radius: 100%;
+    box-shadow: 0 0 0 3px #AAA, 0 0 0 3px lighten(#39E5C3, 30%);
+    background-color: gray;
+    color: white;
+    .speech-input-recognizing & {
+        background-color: #39E5C3;
+        box-shadow: 0 0 0 3px #AAA, 0 0 0 12px lighten(#39E5C3, 35%);
+    }
+    .speech-input-mic-svg {
+        fill: white;
+        filter: drop-shadow( 0px -1px 0px #696 );
+        width: $size; height: $size;
+    }
+}
+// }}

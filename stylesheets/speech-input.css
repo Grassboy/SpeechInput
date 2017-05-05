@@ -1,0 +1,105 @@
+/* line 11, ../sass/speech-input.scss */
+.speech-input-placeholder {
+  transition: background-color 0.2s ease-out, visibility 0.2s ease-out;
+  background-color: transparent;
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* line 21, ../sass/speech-input.scss */
+.speech-input-placeholder.speech-input-active {
+  background-color: rgba(0, 0, 0, 0.3);
+  visibility: visible;
+}
+
+/* line 26, ../sass/speech-input.scss */
+.speech-input-inner-box {
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  opacity: 0;
+  transform: translateY(60px);
+  background: white;
+  color: #666;
+  padding: 1.5em;
+  width: 80%;
+  max-width: 450px;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+/* line 37, ../sass/speech-input.scss */
+.speech-input-active .speech-input-inner-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* line 44, ../sass/speech-input.scss */
+.speech-input-example-list:before {
+  color: #BBB;
+  content: attr(data-alt);
+}
+
+/* line 49, ../sass/speech-input.scss */
+.speech-input-example-item {
+  line-height: 1.2em;
+  margin: 0.45em;
+}
+/* line 52, ../sass/speech-input.scss */
+.speech-input-example-item em {
+  font-weight: bold;
+  margin: 0.3em;
+}
+
+/* line 57, ../sass/speech-input.scss */
+.speech-input-title {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+/* line 64, ../sass/speech-input.scss */
+.speech-input-example-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* line 68, ../sass/speech-input.scss */
+.speech-input-example-item em {
+  font-style: normal;
+}
+
+/* line 71, ../sass/speech-input.scss */
+.speech-input-icon {
+  transition: background-color 0.2s ease-out, box-shadow 0.3s cubic-bezier(0, 3, 0, 0);
+  display: block;
+  margin: 15px auto;
+  padding: 0;
+  line-height: 80px;
+  width: 80px;
+  height: 80px;
+  font-size: 48px;
+  text-align: center;
+  border-radius: 100%;
+  box-shadow: 0 0 0 3px #AAA, 0 0 0 3px #c0f7ec;
+  background-color: gray;
+  color: white;
+}
+/* line 85, ../sass/speech-input.scss */
+.speech-input-recognizing .speech-input-icon {
+  background-color: #39E5C3;
+  box-shadow: 0 0 0 3px #AAA, 0 0 0 12px #d7faf3;
+}
+/* line 89, ../sass/speech-input.scss */
+.speech-input-icon .speech-input-mic-svg {
+  fill: white;
+  filter: drop-shadow(0px -1px 0px #696);
+  width: 80px;
+  height: 80px;
+}

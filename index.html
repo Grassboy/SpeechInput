@@ -1,34 +1,26 @@
-SpeechInput
-====
-
-a wrapped webkitSpeechRecognition object
-
-see the demo page: http://grassboy.github.io/SpeechInput/
-
-The .css file was auto created through compass.app: https://github.com/KKBOX/compassapp/releases
-You can maintain .scss files directly
-
-### Dependency:
-
-jQuery: https://jquery.com/download/   
-jQuery.History.js: https://github.com/browserstate/history.js
-
-Usage:
-====
-
-## Dependency
-
-````html
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <title>Speech Input Demo Page</title>
     <script src="javascript/jquery.js"></script>
     <script src="javascript/jquery.history.js"></script>
     <script src="javascript/speech-input.js"></script>
     <link href="stylesheets/speech-input.css" media="screen, projection" rel="stylesheet" type="text/css" />
-````
-
-## Markup
-
-````html
+    <!-- for dev
+    <link href="http://grassboy.tw:24680/stylesheets/speech-input.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <script src="http://grassboy.tw:35729/livereload.js" type="text/javascript"></script>
+    -->
+</head>
+<body>
+    <h1>Speech Input Demo</h1>
+    <section>請說出「再見」來關閉語音輸入方塊</section>
+    <!-- trigger button: you can replace it with your own -->
     <button class="trigger-button">開始語音輸入</button>
+
+    <!-- input box -->
     <aside class="speech-input-placeholder">
         <div class="speech-input-inner-box">
             <h3 class="speech-input-title">請說話</h3>
@@ -40,17 +32,14 @@ Usage:
                 </g>
                 </svg>
             </div>
+            <!-- You can list some example sentences at here, or just remove this block -->
             <ul class="speech-input-example-list" data-alt="例句：">
-                <li class="speech-input-example-item"><em>台北車站</em>到<em>南港展覽館</em></li>
-                <li class="speech-input-example-item"><em>忠孝新生</em></li>
+                <li class="speech-input-example-item">捷運<em>中正紀念堂</em>到<em>南港展覽館</em></li>
+                <li class="speech-input-example-item"><em>下星期一</em>天氣</li>
             </ul>
         </div>
     </aside>
-````
-
-## JavaScript
-
-````javascript
+    <script>
     var speechInput = new SpeechInput($('.trigger-button')[0], $('.speech-input-placeholder')[0],{
         callback: function(result){
             if(result == '再見') {
@@ -64,5 +53,6 @@ Usage:
         }
     });
     speechInput.start();
-````
-
+    </script>
+</body>
+</html>
